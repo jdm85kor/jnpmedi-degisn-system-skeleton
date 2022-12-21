@@ -1,0 +1,1 @@
+# jnpmedi-degisn-system-skeleton
