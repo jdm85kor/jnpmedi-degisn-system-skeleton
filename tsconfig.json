@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "target": "es2017",
+    "sourceMap": true,
+    "allowJs": true,
+    "strictNullChecks": false,
+    "outDir": "build",
+    "module": "commonjs",
+    "baseUrl": "./"
+  },
+  "include": ["src"]
+}

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Input } from "../components/atomic/Input";
 
 export default {
@@ -14,26 +12,27 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Input {...args} />;
 
-export const Primary = Template.bind({});
+export const BlueSmall = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
+BlueSmall.args = {
   primary: true,
-  label: "Input",
+  label: "Blue Small",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Input",
+export const RedSmall = Template.bind({});
+RedSmall.args = {
+  label: "Red Small",
 };
 
-export const Large = Template.bind({});
-Large.args = {
+export const BlueLarge = Template.bind({});
+BlueLarge.args = {
+  primary: true,
   size: "large",
-  label: "Input",
+  label: "Blue Large",
 };
 
-export const Small = Template.bind({});
-Small.args = {
+export const RedLarge = Template.bind({});
+RedLarge.args = {
   size: "small",
-  label: "Input",
+  label: "Red Large",
 };
