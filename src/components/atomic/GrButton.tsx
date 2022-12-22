@@ -8,7 +8,6 @@ import {
 } from "../../guide/colors";
 
 type Size = "small" | "medium" | "large" | "fill" | "auto";
-type Iconname = "none" | "a" | "b" | "c";
 
 export interface GrButtonProps {
   children: React.ReactNode;
@@ -20,14 +19,11 @@ export interface GrButtonProps {
   bordered?: boolean;
   /** 버튼 크기 */
   size?: Size;
-  /** 아이콘 종류 */
-  icon?: Iconname;
-  iconRight?: Iconname;
 
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const GrButton = (props: GrButtonProps) => {
+export function GrButton(props: GrButtonProps) {
   const css = {
     height: "2rem",
     color: "#fff",
@@ -62,29 +58,7 @@ export const GrButton = (props: GrButtonProps) => {
 
   return (
     <button disabled={props.disabled} onClick={props.onClick} css={css}>
-      {props.icon && props.icon !== "none" && (
-        <span
-          style={{
-            marginLeft: "0.5rem",
-            marginRight: "0.5rem",
-          }}
-        >
-          [{props.icon}]
-        </span>
-      )}
-
       {props.children}
-
-      {props.iconRight && props.iconRight !== "none" && (
-        <span
-          style={{
-            marginLeft: "0.5rem",
-            marginRight: "0.5rem",
-          }}
-        >
-          [{props.iconRight}]
-        </span>
-      )}
     </button>
   );
-};
+}
