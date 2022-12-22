@@ -1,0 +1,24 @@
+import { backgroundColor } from "../../guide/colors";
+
+<Meta title="Guide/Color" />
+
+export const Colors = () => {
+  return Object.keys(backgroundColor).map((color) => (
+    <div
+      style={{
+        backgroundColor: backgroundColor[color],
+        color: "white",
+        marginBottom: "10px",
+        padding: "4px",
+      }}
+    >
+      {color}
+    </div>
+  ));
+};
+
+# Color
+
+---
+
+<Colors />

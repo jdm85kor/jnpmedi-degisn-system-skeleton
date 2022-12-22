@@ -1,13 +1,14 @@
 import { MouseEventHandler } from "react";
 import {
-  BackgroundColor,
-  BackgroundColorDisabled,
-  BackgroundColorDisabledHover,
-  BackgroundColorHover,
+  backgroundColor,
+  backgroundColorDisabled,
+  backgroundColorDisabledHover,
+  backgroundColorHover,
   Colors,
 } from "../../guide/colors";
 
 type Size = "small" | "medium" | "large" | "fill" | "auto";
+type Iconname = "none" | "a" | "b" | "c";
 
 export interface GrButtonProps {
   children: React.ReactNode;
@@ -19,6 +20,10 @@ export interface GrButtonProps {
   bordered?: boolean;
   /** 버튼 크기 */
   size?: Size;
+  /** 아이콘 종류 */
+  icon?: Iconname;
+  iconRight?: Iconname;
+
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -30,6 +35,7 @@ export const GrButton = (props: GrButtonProps) => {
     borderColor: "black", //"#e1e5e7",
     borderRadius: "0.25rem",
     borderWidth: props.bordered ? "1px" : "0px",
+    cursor: "pointer",
     width:
       props.size === "large"
         ? "15rem"
@@ -40,23 +46,45 @@ export const GrButton = (props: GrButtonProps) => {
         : props.size === "fill"
         ? "100%"
         : "auto",
-    backgroundColor: BackgroundColor[props.color || "primary"],
+    backgroundColor: backgroundColor[props.color || "primary"],
     "&:hover": {
       borderColor: "#bfc2c4",
-      backgroundColor: BackgroundColorHover[props.color || "primary"],
+      backgroundColor: backgroundColorHover[props.color || "primary"],
     },
     "&[disabled]": {
       color: "#bdbfbf",
-      backgroundColor: BackgroundColorDisabled[props.color || "primary"],
+      backgroundColor: backgroundColorDisabled[props.color || "primary"],
       "&:hover": {
-        backgroundColor: BackgroundColorDisabledHover[props.color || "primary"],
+        backgroundColor: backgroundColorDisabledHover[props.color || "primary"],
       },
     },
   };
 
   return (
     <button disabled={props.disabled} onClick={props.onClick} css={css}>
+      {props.icon && props.icon !== "none" && (
+        <span
+          style={{
+            marginLeft: "0.5rem",
+            marginRight: "0.5rem",
+          }}
+        >
+          [{props.icon}]
+        </span>
+      )}
+
       {props.children}
+
+      {props.iconRight && props.iconRight !== "none" && (
+        <span
+          style={{
+            marginLeft: "0.5rem",
+            marginRight: "0.5rem",
+          }}
+        >
+          [{props.iconRight}]
+        </span>
+      )}
     </button>
   );
 };
