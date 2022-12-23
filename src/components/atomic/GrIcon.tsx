@@ -27,13 +27,15 @@ const map: { [key in IconTypes]: any } = {
 };
 
 const StyledIcon = styled.div<GrIconProps>`
+  ${(props: GrIconProps) => `
   display: inline-flex;
   margin: 0.5rem;
   transition: transform 0.2s ease-in-out;
-  transform: rotate(${(props: GrIconProps) => props.rotation}deg);
+  transform: rotate(${props.rotation}deg);
   &:hover {
-    transform: rotate(${(props: GrIconProps) => props.rotationOnHover}deg);
+    transform: rotate(${props.rotationOnHover}deg);
   }
+  `}
 `;
 
 export interface GrIconProps {

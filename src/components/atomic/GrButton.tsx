@@ -20,27 +20,26 @@ const width_map = {
 };
 
 const StyledButton = styled.button<GrButtonProps>`
+  ${(props: GrButtonProps) =>
+    `
   height: 44px;
   color: #fff;
   border-style: solid;
   border-color: black;
   border-radius: 0.25rem;
   cursor: pointer;
-
-  width: ${(props) => width_map[props.size || "auto"]};
-  background-color: ${(props) => backgroundColor[props.color || "primary"]};
-  border-width: ${(props) => (props.bordered ? "1px" : "0px")};
-  text-align: ${(props) => props.align || "center"};
+  width: ${width_map[props.size || "auto"]};
+  background-color: ${backgroundColor[props.color || "primary"]};
+  border-width: ${props.bordered ? "1px" : "0px"};
+  text-align: ${props.align || "center"};
 
   &:hover {
     border-color: #bfc2c4;
-    background-color: ${(props) =>
-      backgroundColorHover[props.color || "primary"]};
+    background-color: ${backgroundColorHover[props.color || "primary"]};
   }
 
   &:active {
-    background-color: ${(props) =>
-      backgroundColorDark[props.color || "primary"]};
+    background-color: ${backgroundColorDark[props.color || "primary"]};
     transform-origin: top left;
     transform: translate(1px, 1px);
     box-shadow: -1px -1px 3px #888;
@@ -48,13 +47,14 @@ const StyledButton = styled.button<GrButtonProps>`
 
   &:disabled {
     color: #bdbfbf;
-    background-color: ${(props) =>
-      backgroundColorDisabled[props.color || "primary"]};
+    background-color: ${backgroundColorDisabled[props.color || "primary"]};
     &:hover {
-      background-color: ${(props) =>
-        backgroundColorDisabledHover[props.color || "primary"]};
+      background-color: ${
+        backgroundColorDisabledHover[props.color || "primary"]
+      };
     }
   }
+  `}
 `;
 
 export interface GrButtonProps {
