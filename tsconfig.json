@@ -8,10 +8,7 @@
     "strictNullChecks": false,
     "outDir": "build",
     "module": "commonjs",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "baseUrl": "./"
   },
   "include": ["src"]
 }

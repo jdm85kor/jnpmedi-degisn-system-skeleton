@@ -31,3 +31,11 @@ export const backgroundColorDisabledHover: { [k in Colors]: string } = {
   warning: "#e0ccc5",
   success: "#c5d6d1",
 };
+
+export const backgroundColorDark: { [k in Colors]: string } = {
+  primary: "#0d587f",
+  emphasize: "#e94c0b",
+  link: "#001a90",
+  warning: "#c32e01",
+  success: "#005c34",
+};
