@@ -14,6 +14,7 @@ interface Props {
 }
 
 export const Table = ({ head, body, children }: Props) => {
+  console.log(children);
   return (
     <StyledTable>
       <thead>

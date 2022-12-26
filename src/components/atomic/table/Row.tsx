@@ -50,6 +50,7 @@ const StyledRow = styled.tr<{ theme: "normal" | "primary" }>`
         /* Primary */
 
         background: #259ac5;
+        color: #FFF;
         /* Border-Gray */
 
         border: 1px solid #e1e5e7;

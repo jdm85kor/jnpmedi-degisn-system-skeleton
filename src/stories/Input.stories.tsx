@@ -1,7 +1,7 @@
 import { Input } from "../components/atomic/Input";
 
 export default {
-  title: "Example/Input",
+  title: "Atomic/Input",
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
