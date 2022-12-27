@@ -1,7 +1,7 @@
-import { Table } from "../components/atomic/table/Table";
+import { Table } from "../../components/atomic/table/Table";
 
 export default {
-  title: "Example/Table",
+  title: "Atomic Components/Table",
   component: Table,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
